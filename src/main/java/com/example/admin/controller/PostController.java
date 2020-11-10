@@ -24,6 +24,6 @@ public class PostController {
     }
 
     public void patch(){
-        
+
     }
 }

@@ -1,10 +1,13 @@
 package com.example.admin.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
+@Data
+@AllArgsConstructor
+
 public class SearchParam {
 
     private String account;
