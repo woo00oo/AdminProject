@@ -16,9 +16,10 @@ public class UserRepositoryTest extends AdminApplicationTests {
     private UserRepository userRepository;
 
     @Test
+    @Transactional
     public void create(){
         User user = new User();
-        user.setAccount("TestUser05");
+        user.setAccount("TestUser03");
         user.setEmail("Test@test.com");
         user.setPhoneNumber("010-1111-1111");
         user.setCreatedAt(LocalDateTime.now());
@@ -39,7 +40,7 @@ public class UserRepositoryTest extends AdminApplicationTests {
     }
 
     @Test
-    @Transactional
+    //@Transactional
     public void update(){
         Optional<User> user = userRepository.findById(3L);
 
