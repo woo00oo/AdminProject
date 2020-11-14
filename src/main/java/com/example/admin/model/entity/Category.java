@@ -25,7 +25,7 @@ public class Category {
 
     private String title;
 
-    private LocalDateTime createAt;
+    private LocalDateTime createdAt;
 
     private String createdBy;
 
