@@ -33,8 +33,8 @@ public class OrderDetailRepositoryTest extends AdminApplicationTests {
         orderDetail.setTotalPrice(BigDecimal.valueOf(900000));
         orderDetail.setCreatedAt(LocalDateTime.now());
         orderDetail.setCreatedBy("AdminServer");
-        orderDetail.setOrderGroupId(1L); //어떠한 장바구니에
-        orderDetail.setItemId(1L);  //어떠한 상품
+        //orderDetail.setOrderGroupId(1L); //어떠한 장바구니에
+//        orderDetail.setItemId(1L);  //어떠한 상품
 
         OrderDetail newOrderDetail = orderDetailRepository.save(orderDetail);
 

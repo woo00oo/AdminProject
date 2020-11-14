@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 public class AdminUserRepositoryTest extends AdminApplicationTests {
 
@@ -16,8 +17,8 @@ public class AdminUserRepositoryTest extends AdminApplicationTests {
     @Test
     public void create(){
         AdminUser adminUser = new AdminUser();
-        adminUser.setAccount("AdminUser01");
-        adminUser.setPassword("AdminUser01");
+        adminUser.setAccount("AdminUser02");
+        adminUser.setPassword("AdminUser02");
         adminUser.setStatus("REGISTERED");
         adminUser.setRole("PARTNER");
         adminUser.setCreatedAt(LocalDateTime.now());
@@ -25,5 +26,14 @@ public class AdminUserRepositoryTest extends AdminApplicationTests {
 
         AdminUser newAdminUser = adminUserRepository.save(adminUser);
         Assert.assertNotNull(newAdminUser);
+    }
+
+    @Test
+    public void read(){
+        Optional<AdminUser> adminUser = adminUserRepository.findById(1L);
+
+        adminUser.ifPresent(newAdminUser ->{
+            System.out.println(newAdminUser.getAccount());
+        });
     }
 }

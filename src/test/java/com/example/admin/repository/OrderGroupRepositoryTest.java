@@ -2,18 +2,23 @@ package com.example.admin.repository;
 
 import com.example.admin.AdminApplicationTests;
 import com.example.admin.model.entity.OrderGroup;
+import com.example.admin.model.entity.User;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 public class OrderGroupRepositoryTest extends AdminApplicationTests {
 
 
     @Autowired
     private OrderGroupRepository orderGroupRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @Test
     public void create(){
@@ -30,7 +35,7 @@ public class OrderGroupRepositoryTest extends AdminApplicationTests {
         orderGroup.setArrivalDate(LocalDateTime.now());
         orderGroup.setCreatedAt(LocalDateTime.now());
         orderGroup.setCreatedBy("AdminServer");
-        orderGroup.setUserId(1L);
+
 
         OrderGroup newOrderGroup = orderGroupRepository.save(orderGroup);
         Assert.assertNotNull(newOrderGroup);
