@@ -1,6 +1,7 @@
 package com.example.admin.controller;
 
 import com.example.admin.model.SearchParam;
+import com.example.admin.model.network.Header;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -30,5 +31,10 @@ public class GetController {
 
         //Json 형태로 Spring이 반환 해줌.(jackson 라이브러리 내장)    
         return searchParam;
+    }
+
+    @GetMapping("/header")
+    public Header getHeader(){
+        return Header.builder().resultCode("ok").description("ok").build();
     }
 }
