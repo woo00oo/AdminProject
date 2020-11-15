@@ -35,6 +35,7 @@ public class GetController {
 
     @GetMapping("/header")
     public Header getHeader(){
-        return Header.builder().resultCode("ok").description("ok").build();
+        Boolean result = true;
+        return Header.OK(result);
     }
 }
