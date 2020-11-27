@@ -1,7 +1,9 @@
 package com.example.admin.model.entity;
 
+import com.example.admin.model.enumclass.OrderType;
 import lombok.*;
 import lombok.experimental.Accessors;
+import org.hibernate.sql.ordering.antlr.OrderByTemplateTokenTypes;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -29,7 +31,8 @@ public class OrderGroup {
 
     private String status;
 
-    private String orderType; // 주문의 형태 - 일괄 / 개별
+    @Enumerated(EnumType.STRING)
+    private OrderType orderType; // 주문의 형태 - 일괄 / 개별
 
     private String revAddress;
 
