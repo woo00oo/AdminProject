@@ -30,8 +30,7 @@ public class Partner {
 
     private String name;
 
-    @Enumerated(EnumType.STRING)
-    private PartnerStatus status;
+    private String status;
 
     private String address;
 
