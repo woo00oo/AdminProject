@@ -4,6 +4,7 @@ import com.example.admin.ifs.CrudInterface;
 import com.example.admin.model.network.Header;
 import com.example.admin.model.network.request.UserApiRequest;
 import com.example.admin.model.network.response.UserApiResponse;
+import com.example.admin.model.network.response.UserOrderInfoApiResponse;
 import com.example.admin.service.UserApiLogicService;
 
 
@@ -25,6 +26,11 @@ public class UserApiController implements CrudInterface<UserApiRequest, UserApiR
 
     @Autowired
     private UserApiLogicService userApiLogicService;
+
+    @GetMapping("{id}/orderInfo")
+    public Header<UserOrderInfoApiResponse> orderInfo(@PathVariable Long id){
+        return userApiLogicService.orderInfo(id);
+    }
 
     @GetMapping("")
     public Header<List<UserApiResponse>> search(@PageableDefault(sort="id",direction = Sort.Direction.ASC,size=15) Pageable pageable){
